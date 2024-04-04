@@ -17,7 +17,7 @@ public class HealthDataDao {
             statement.setDouble(3, healthData.getHeight());
             statement.setInt(4, healthData.getSteps());
             statement.setInt(5, healthData.getHeartRate());
-            statement.setDate(6, Date.valueOf(healthData.getDate()));
+            statement.setDate(6, Date.valueOf(healthData.getDate().atStartOfDay().toLocalDate()));
 
             return statement.executeUpdate() > 0;
         }
@@ -91,3 +91,5 @@ public class HealthDataDao {
 
     public boolean deleteHealthData(int id) throws SQLException {
         String query = "DELETE FROM health_data WHERE id = ?";
+    }
+  }

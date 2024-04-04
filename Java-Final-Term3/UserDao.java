@@ -39,10 +39,11 @@ public class UserDao {
             ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
+                String hashedPassword = resultSet.getString("password");
                 user = new User(
                         resultSet.getInt("id"),
                         resultSet.getString("email"),
-                        BCrypt.checkpw(user.getPassword(), resultSet.getString("password")),
+                        BCrypt.checkpw(user.getPassword(), hashedPassword),
                         resultSet.getString("name")
                 );
             }
@@ -65,10 +66,11 @@ public class UserDao {
             ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
+                String hashedPassword = resultSet.getString("password");
                 user = new User(
                         resultSet.getInt("id"),
                         resultSet.getString("email"),
-                        BCrypt.checkpw(user.getPassword(), resultSet.getString("password")),
+                        BCrypt.checkpw(user.getPassword(), hashedPassword),
                         resultSet.getString("name")
                 );
             }

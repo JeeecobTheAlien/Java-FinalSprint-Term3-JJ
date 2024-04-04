@@ -23,7 +23,7 @@ public class DoctorPortalDao {
 
         String query = "SELECT * FROM users WHERE doctor_id = ?";
 
-        try (Connection connection = DataBaseConnection.getConnection();
+        try (DatabaseConnection connection = connection.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, doctorId);
             ResultSet resultSet = statement.executeQuery();

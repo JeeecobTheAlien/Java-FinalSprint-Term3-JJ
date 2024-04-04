@@ -10,7 +10,7 @@ public class HealthData {
     private int sleepHours;
     private LocalDate date;
 
-    public HealthData(int id, int userId, double weight, double height, int steps, int heartRate, LocalDate date) {
+    public HealthData(int id, int userId, double weight, double height, int steps, int heartRate, int sleepHours, LocalDate date) {
         this.id = id;
         this.userId = userId;
         this.weight = weight;
@@ -21,7 +21,7 @@ public class HealthData {
         this.date = date;
     }
 
-    public HealthData(int userId, double weight, double height, int steps, int heartRate, LocalDate date) {
+    public HealthData(int userId, double weight, double height, int steps, int heartRate, int sleepHours, LocalDate date) {
         this.userId = userId;
         this.weight = weight;
         this.height = height;

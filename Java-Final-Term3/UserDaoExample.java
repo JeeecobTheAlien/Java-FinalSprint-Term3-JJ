@@ -13,7 +13,7 @@ public class UserDaoExample {
 
         // Database logic to insert data using PREPARED Statement
         try {
-            Connection con = DatabaseConnection.getCon();
+            Connection con = DataBaseConnection.getCon();
             PreparedStatement statement = con.prepareStatement(query);
             statement.setString(1, user.getFirstName());
             statement.setString(2, user.getLastName());
@@ -43,7 +43,7 @@ public class UserDaoExample {
 
         // Database logic to get data by ID Using Prepared Statement
         try {
-            Connection con = DatabaseConnection.getCon();
+            Connection con = DataBaseConnection.getCon();
             PreparedStatement statement = con.prepareStatement(query);
             statement.setInt(1, id);
             ResultSet rs = statement.executeQuery();
@@ -74,7 +74,7 @@ public class UserDaoExample {
 
         // Database logic to get data by ID Using Prepared Statement
         try {
-            Connection con = DatabaseConnection.getCon();
+            Connection con = DataBaseConnection.getCon();
             PreparedStatement statement = con.prepareStatement(query);
             statement.setString(1, email);
             ResultSet rs = statement.executeQuery();
@@ -103,7 +103,7 @@ public class UserDaoExample {
 
         // Database logic to get update user Using Prepared Statement
         try {
-            Connection con = DatabaseConnection.getCon();
+            Connection con = DataBaseConnection.getCon();
             PreparedStatement statement = con.prepareStatement(query);
             statement.setString(1, user.getFirstName());
             statement.setString(2, user.getLastName());
@@ -128,7 +128,7 @@ public class UserDaoExample {
 
         // Database logic to delete user
         try {
-            Connection con = DatabaseConnection.getCon();
+            Connection con = DataBaseConnection.getCon();
             PreparedStatement statement = con.prepareStatement(query);
             statement.setInt(1, id);
             int rowsUpdated = statement.executeUpdate();
@@ -146,7 +146,7 @@ public class UserDaoExample {
         String query = "SELECT password FROM users WHERE email = ?";
         //Implement logic to retrieve password using the Bcrypt
         try {
-            Connection con = DatabaseConnection.getCon();
+            Connection con = DataBaseConnection.getCon();
             PreparedStatement statement = con.prepareStatement(query);
             statement.setString(1, email);
             ResultSet rs = statement.executeQuery();
